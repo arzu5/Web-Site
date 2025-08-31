@@ -5,9 +5,11 @@
 <title>Admin Panel</title>
 <style>
 body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+h1 { text-align: center; }
 h2 { margin-top: 40px; }
 .item { margin-bottom: 15px; padding: 10px; background: white; border-radius: 5px; }
 input[type=text] { width: 70%; padding: 5px; margin-right: 10px; }
+button { padding: 10px 20px; margin-top: 20px; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -19,6 +21,7 @@ input[type=text] { width: 70%; padding: 5px; margin-right: 10px; }
 <script>
 let data = {};
 
+// JSON dosyasını yükle
 function loadContent() {
   fetch('urunler.json')
     .then(res => res.json())
@@ -29,7 +32,7 @@ function loadContent() {
 
       Object.keys(json).forEach(category => {
         const h2 = document.createElement('h2');
-        h2.textContent = category;
+        h2.textContent = category.toUpperCase();
         container.appendChild(h2);
 
         json[category].forEach((item, index) => {
@@ -42,9 +45,11 @@ function loadContent() {
           container.appendChild(div);
         });
       });
-    });
+    })
+    .catch(err => alert("urunler.json yüklenemedi. Dosya admin klasöründe olmalı."));
 }
 
+// JSON’u kaydet
 function saveChanges() {
   Object.keys(data).forEach(category => {
     data[category].forEach((item, index) => {
@@ -61,7 +66,7 @@ function saveChanges() {
   a.click();
   URL.revokeObjectURL(url);
 
-  alert('JSON dosyası indirildi. Sunucuya yükleyin.');
+  alert('JSON dosyası indirildi. Sunucuya tekrar yükleyin.');
 }
 
 loadContent();
