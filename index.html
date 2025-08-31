@@ -60,26 +60,41 @@
             <h6>Her tanesi, Eskişehir’in beyaz altını lületaşından, el işçiliğiyle sabır ve ustalıkla şekillendirildi. </h6>
             <h6>  Hissedin. Taşıyın.</h6>
 </main>
+<div id="carouselContainer"></div>
+
 <script>
 fetch('/content/tesbihler.json')
   .then(res => res.json())
   .then(data => {
-    const container = document.getElementById('tesbihContainer');
-    data.items.forEach((item, index) => {
-      const activeClass = index === 0 ? 'active' : '';
-      container.innerHTML += `
-        <div class="carousel-item ${activeClass}">
-          <div class="col">
-            <div class="card">
-              <img src="${item.image}" class="card-img-top">
-              <div class="card-body">
-                <p class="card-title text-center">${item.title}</p>
-              </div>
+    const container = document.getElementById('carouselContainer');
+    
+    Object.keys(data).forEach((kategori, index) => {
+      const carouselItem = document.createElement('div');
+      carouselItem.className = 'carousel-item' + (index === 0 ? ' active' : '');
+      
+      const row = document.createElement('div');
+      row.className = 'row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3';
+      
+      data[kategori].forEach(item => {
+        const col = document.createElement('div');
+        col.className = 'col';
+        col.innerHTML = `
+          <div class="card">
+            <img src="${item.image}" class="card-img-top">
+            <div class="card-body">
+              <p class="card-title text-center">${item.title}</p>
             </div>
-          </div>`;
+          </div>
+        `;
+        row.appendChild(col);
+      });
+      
+      carouselItem.appendChild(row);
+      container.appendChild(carouselItem);
     });
   });
 </script>
+
 
 <div class="container py-5">  
   <div id="tesbihCarousel" class="carousel slide" data-bs-ride="carousel">

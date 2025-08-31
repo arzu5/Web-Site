@@ -2,28 +2,22 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "Görseller"
-public_folder: "/Görseller"
+media_folder: "Gorseller"
+public_folder: "/Gorseller"
 
 collections:
-  - name: "tesbihler"
-    label: "Tesbihler"
-    folder: "content/tesbihler"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Resim", name: "image", widget: "image" }
-      - { label: "Baslik", name: "title", widget: "string" }
-
-
-  - name: "takilar"
-    label: "Takılar"
+  - name: "urunler"
+    label: "Ürünler"
     files:
-      - file: "content/takilar.json"
-        label: "Takılar Listesi"
-        name: "takilar_listesi"
+      - file: "content/tesbihler.json"
+        label: "Ürünler"
+        name: "urunler_listesi"
         fields:
-          - { label: "Urunler", name: "items", widget: "list", fields: [
+          - { label: "Pipolar", name: "pipolar", widget: "list", fields: [
+              { label: "Resim", name: "image", widget: "image" },
+              { label: "Baslik", name: "title", widget: "string" }
+            ] }
+          - { label: "Sigaralık", name: "sigaralik", widget: "list", fields: [
               { label: "Resim", name: "image", widget: "image" },
               { label: "Baslik", name: "title", widget: "string" }
             ] }
