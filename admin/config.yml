@@ -8,15 +8,13 @@ public_folder: "/Görseller"
 collections:
   - name: "tesbihler"
     label: "Tesbihler"
-    files:
-      - file: "content/tesbihler.json"
-        label: "Tesbihler Listesi"
-        name: "tesbihler_listesi"
-        fields:
-          - { label: "Urunler", name: "items", widget: "list", fields: [
-              { label: "Resim", name: "image", widget: "image" },
-              { label: "Baslik", name: "title", widget: "string" }
-            ] }
+    folder: "content/tesbihler"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Resim", name: "image", widget: "image" }
+      - { label: "Baslik", name: "title", widget: "string" }
+
 
   - name: "takilar"
     label: "Takılar"
