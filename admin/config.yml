@@ -2,22 +2,29 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "Gorseller"
-public_folder: "/Gorseller"
+media_folder: "adminGorseller"
+public_folder: "/admin/adminGorseller"
 
 collections:
   - name: "urunler"
     label: "Ürünler"
-    files:
-      - file: "content/urunler.json"
-        label: "Ürünler"
-        name: "urunler_listesi"
-        fields:
-          - { label: "Pipolar", name: "pipolar", widget: "list", fields: [
-              { label: "Resim", name: "image", widget: "image" },
-              { label: "Baslik", name: "title", widget: "string" }
-            ] }
-          - { label: "Sigaralik", name: "sigaralik", widget: "list", fields: [
-              { label: "Resim", name: "image", widget: "image" },
-              { label: "Baslik", name: "title", widget: "string" }
-            ] }
+    file: "content/urunler.json"
+    fields:
+      - { 
+          label: "Pipolar", 
+          name: "pipolar", 
+          widget: "list", 
+          fields: [
+            { label: "Resim", name: "image", widget: "image" },
+            { label: "Başlık", name: "title", widget: "string" }
+          ] 
+        }
+      - { 
+          label: "Sigaralık", 
+          name: "sigaralik", 
+          widget: "list", 
+          fields: [
+            { label: "Resim", name: "image", widget: "image" },
+            { label: "Başlık", name: "title", widget: "string" }
+          ] 
+        }

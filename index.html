@@ -62,19 +62,21 @@
 </main>
 <div id="carouselContainer"></div>
 
+<div id="carouselContainer"></div>
+
 <script>
-fetch('/content/tesbihler.json')
+fetch('/content/urunler.json')
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById('carouselContainer');
-    
+
     Object.keys(data).forEach((kategori, index) => {
       const carouselItem = document.createElement('div');
       carouselItem.className = 'carousel-item' + (index === 0 ? ' active' : '');
-      
+
       const row = document.createElement('div');
       row.className = 'row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3';
-      
+
       data[kategori].forEach(item => {
         const col = document.createElement('div');
         col.className = 'col';
@@ -88,12 +90,14 @@ fetch('/content/tesbihler.json')
         `;
         row.appendChild(col);
       });
-      
+
       carouselItem.appendChild(row);
       container.appendChild(carouselItem);
     });
-  });
+  })
+  .catch(err => console.error("JSON yüklenemedi:", err));
 </script>
+
 
 
 <div class="container py-5">  

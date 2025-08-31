@@ -1,0 +1,10 @@
+{
+  "pipolar": [
+    { "image": "/admin/adminGorseller/tesbih_1.jpg", "title": "Pipo LP16" },
+    { "image": "/admin/adminGorseller/tesbih_2.jpg", "title": "Pipo LP17" }
+  ],
+  "sigaralik": [
+    { "image": "/admin/adminGorseller/tesbih_3.jpg", "title": "Sigaralık LS06" },
+    { "image": "/admin/adminGorseller/tesbih_4.jpg", "title": "Sigaralık LS07" }
+  ]
+}
