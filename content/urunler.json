@@ -1,0 +1,10 @@
+{
+  "tesbihler": [
+    { "image": "/admin/adminGorseller/tesbih_1.jpg", "title": "Tesbih LT01" },
+    { "image": "/admin/adminGorseller/tesbih_2.jpg", "title": "Tesbih LT02" }
+  ],
+  "takilar": [
+    { "image": "/admin/adminGorseller/tesbih_3.jpg", "title": "Kolye LK01" },
+    { "image": "/admin/adminGorseller/tesbih_4.jpg", "title": "Kolye LK02" }
+  ]
+}
