@@ -8,18 +8,24 @@ public_folder: "/Görseller"
 collections:
   - name: "tesbihler"
     label: "Tesbihler"
-    file: "content/tesbihler.json"
-    fields:
-      - { label: "Ürünler", name: "items", widget: "list", fields: [
-          { label: "Resim", name: "image", widget: "image" },
-          { label: "Başlık", name: "title", widget: "string" }
-        ] }
+    files:
+      - file: "content/tesbihler.json"
+        label: "Tesbihler Listesi"
+        name: "tesbihler_listesi"
+        fields:
+          - { label: "Ürünler", name: "items", widget: "list", fields: [
+              { label: "Resim", name: "image", widget: "image" },
+              { label: "Başlık", name: "title", widget: "string" }
+            ] }
 
   - name: "takilar"
     label: "Takılar"
-    file: "content/takilar.json"
-    fields:
-      - { label: "Ürünler", name: "items", widget: "list", fields: [
-          { label: "Resim", name: "image", widget: "image" },
-          { label: "Başlık", name: "title", widget: "string" }
-        ] }
+    files:
+      - file: "content/takilar.json"
+        label: "Takılar Listesi"
+        name: "takilar_listesi"
+        fields:
+          - { label: "Ürünler", name: "items", widget: "list", fields: [
+              { label: "Resim", name: "image", widget: "image" },
+              { label: "Başlık", name: "title", widget: "string" }
+            ] }
