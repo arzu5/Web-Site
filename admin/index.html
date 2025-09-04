@@ -71,5 +71,21 @@ function saveChanges() {
 
 loadContent();
 </script>
+
+<div id="netlify-identity-container"></div>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.init();
+
+    // Eğer recovery_token varsa formu göster
+    const hash = window.location.hash;
+    if (hash.includes('recovery_token')) {
+      window.netlifyIdentity.open('recovery');
+    }
+  }
+</script>
+
 </body>
 </html>
+
+

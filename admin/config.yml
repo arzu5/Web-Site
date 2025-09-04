@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main   # GitHub reposundaki ana branch
+
+media_folder: "Görseller"     # görsellerin yükleneceği klasör
+public_folder: "/Görseller"
+
+collections:
+  - name: "tesbihler"
+    label: "Tesbihler"
+    file: "content/tesbihler.json"
+    fields:
+      - { label: "Ürünler", name: "items", widget: "list", fields: [
+          { label: "Resim", name: "image", widget: "image" },
+          { label: "Başlık", name: "title", widget: "string" },
+          { label: "Açıklama", name: "description", widget: "text" }
+        ]}
