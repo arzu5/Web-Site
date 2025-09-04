@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Admin Panel</title>
+<div id="netlify-identity-container"></div>
+
 <style>
 body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
 h1 { text-align: center; }
@@ -71,15 +73,13 @@ function saveChanges() {
 
 loadContent();
 </script>
-
-<div id="netlify-identity-container"></div>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.init();
 
-    // Eğer recovery_token varsa formu göster
-    const hash = window.location.hash;
-    if (hash.includes('recovery_token')) {
+    // Eğer recovery_token varsa formu aç
+    if (window.location.hash.includes('recovery_token')) {
       window.netlifyIdentity.open('recovery');
     }
   }
