@@ -1,4 +1,4 @@
-fetch('/admin/content/urunler.json')
+fetch('/admin/urunler.json')
   .then(res => res.text())
   .then(yamlText => {
     const tesbihler = jsyaml.load(yamlText); // jsyaml kütüphanesi lazım
